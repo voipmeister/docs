@@ -1,5 +1,5 @@
 ---
-title: Cron
+title: 'Cronjob/Scheduled Tasks'
 taxonomy:
     category:
         - docs
