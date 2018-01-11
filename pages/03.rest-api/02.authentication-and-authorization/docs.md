@@ -1,5 +1,8 @@
 ---
 title: 'Authentication and Authorization'
+taxonomy:
+    category:
+        - docs
 visible: true
 ---
 
