@@ -55,6 +55,8 @@ Returns the user's information, including bids, etc. Example response:
 
 This returns the subfleets and aircraft that this user's rank gives them access to.
 
+##### Sample Response:
+
 ```json
 [
     {
@@ -93,6 +95,8 @@ This returns the subfleets and aircraft that this user's rank gives them access 
 
 Get all of the airlines. Paginated
 
+##### Sample Response:
+
 ```json
 {
    "data":[
@@ -127,6 +131,8 @@ Get all of the airlines. Paginated
 
 Get information about a specific airline
 
+##### Sample Response:
+
 ```json
 {
     "id":1,
@@ -145,6 +151,8 @@ Get information about a specific airline
 ### GET /api/airports
 
 Get all of the airports, paginated list
+
+##### Sample Response:
 
 ```json
 {
@@ -188,6 +196,8 @@ Get all of the airports, paginated list
 
 Get all of the hubs, paginated list
 
+##### Sample Response:
+
 ```json
 {
    "data":[
@@ -230,6 +240,8 @@ Get all of the hubs, paginated list
 
 Get the details about an airport
 
+##### Sample Response:
+
 ```json
 {
     "id":"KJFK",
@@ -256,6 +268,8 @@ Get the details about an airport
 ### GET /api/fleet
 
 Get all of the subfleets and aircraft under the fleet. Includes the fare and airline information. Paginated
+
+##### Sample Response:
 
 ```json
 {
@@ -308,7 +322,13 @@ Get all of the subfleets and aircraft under the fleet. Includes the fare and air
 
 Return information about an aircraft, including the subfleet information
 
-Query string parameters: `?type=registration|tail_number|icao`. Default/blank is the DB ID
+Query string parameters: `?type=[parameter]`. Default/blank is the DB ID
+
+- `registration`
+- `tail_number`
+- `icao`
+
+##### Sample Response:
 
 ```json
 {
@@ -344,24 +364,31 @@ Query string parameters: `?type=registration|tail_number|icao`. Default/blank is
 
 Return all of the flights, paginated
 
+##### Sample Response:
+
 ### GET /api/flights/{FLIGHT ID}
 
 Return details about a given flight
+
+##### Sample Response:
 
 ### GET /api/flights/search
 
 Do a search for a flight
 
 Query String Example:
+
 `/api/flights/search?depicao=KJFK&arricao=KAUS`
 
-  - `airline_id` - ID of the airline
-  - `dep_icao` - Departure airport code
-  - `arr_icao` - Arrival airport code
-  - `flight_number` - Can be a partial match
-  - `route_code`
+- `airline_id` - ID of the airline
+- `dep_icao` - Departure airport code
+- `arr_icao` - Arrival airport code
+- `flight_number` - Can be a partial match
+- `route_code`
 
 ***
+
+##### Sample Response:
 
 ## PIREPs
 
@@ -369,13 +396,19 @@ Query String Example:
 
 Retrieve the PIREP information
 
+##### Sample Response:
+
 ### GET /api/pireps/{PIREP ID}/route
 
 Retrieve the route
 
+##### Sample Response:
+
 ### GET /api/pireps/{PIREP ID}/acars/geojson
 
 Get the ACARS data in GeoJSON format
+
+##### Sample Response:
 
 ### GET /api/pireps/{PIREP ID}/acars/positions
 
@@ -385,21 +418,11 @@ Get the ACARS data in plain rows
 
 ***
 
-## Users
-
-### GET /api/users/{id}
-
-Retrieve info about a user
-
-### GET /api/users/{id}/bids
-
-Get a user's bids
-
-***
-
 ## Settings
 
 ### GET /api/settings
 
 Get all of the phpVMS configuration settings, including things like the units and individual configuration options. 
 [See the list of settings here](https://github.com/nabeelio/phpvms/blob/master/app/Database/migrations/2017_06_07_014930_create_settings_table.php#L41). Remember to look at the `type` column in order to properly parse the value.
+
+##### Sample Response:
