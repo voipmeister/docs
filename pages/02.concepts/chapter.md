@@ -1,5 +1,8 @@
 ---
 title: Concepts
+taxonomy:
+    category:
+        - docs
 ---
 
 # Concepts
