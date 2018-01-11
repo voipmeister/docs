@@ -45,7 +45,8 @@
     <nav id="sidebar">
         <div id="header-wrapper">
             <div id="header">
-                <a id="logo" href="{{ theme_config.home_url ?: base_url_absolute }}">{% include 'partials/logo.html.twig' %}</a>
+                <img src="{{ base_url_absolute}}/user/logo.svg" height="80px"/>
+                <!--<a id="logo" href="{{ theme_config.home_url ?: base_url_absolute }}">{% include 'partials/logo.html.twig' %}</a>-->
                 {% include 'partials/search.html.twig' %}
             </div>
         </div>
