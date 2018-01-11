@@ -1,0 +1,11 @@
+email: gm@nabs.io
+fullname: 'Nabeel Shahzad'
+title: Administrator
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$xBLEG2mc/g65k71AZiULse1w9grm5hlXBq.pPYduGuZIqqa3KjodW
