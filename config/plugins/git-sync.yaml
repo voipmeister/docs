@@ -1,0 +1,16 @@
+enabled: true
+text_var: 'Custom Text added by the **Git Sync** plugin (disable plugin to remove)'
+folders:
+  - pages
+webhook: /_git-sync
+branch: master
+remote:
+  name: origin
+  branch: master
+git:
+  author: gituser
+  name: GitSync
+  email: git-sync@trilby.media
+  bin: git
+logging: false
+password: gitsync-def50200f79d8ee8b9528a6e28538d326be463320dcea9cc693146644b872ad4a949edfbafe6cea3ff7924c121cc436a0a07b665aac9f795762997065dc7d1995b87a9254bfbc8cd74908a2af74bef242f038f3e
