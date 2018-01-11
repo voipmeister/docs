@@ -1,5 +1,8 @@
 ---
 title: Pagination
+taxonomy:
+    category:
+        - docs
 ---
 
 Where indicated, pagination is enabled/available. When calling those APIs, the data is returned in this format:
