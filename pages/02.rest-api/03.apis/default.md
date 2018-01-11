@@ -5,6 +5,8 @@ menu: 'APIs Available'
 
 [TOC]
 
+## User APIs
+
 ### GET /api/user
 
 Returns the user's information, including bids, etc. Example response:
