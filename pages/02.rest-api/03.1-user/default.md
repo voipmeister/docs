@@ -1,6 +1,6 @@
 ---
 title: User
-menu: /user
+menu: 'User - /user'
 ---
 
 ### GET /api/user
