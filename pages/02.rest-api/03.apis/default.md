@@ -1,6 +1,6 @@
 ---
-title: User
-menu: 'User - /user'
+title: APIs
+menu: 'APIs Available'
 ---
 
 [TOC]
