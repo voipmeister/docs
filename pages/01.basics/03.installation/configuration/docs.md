@@ -8,9 +8,7 @@ visible: true
 
 [TOC]
 
-After install, an `env.php` file is generated. This file is important to guard and protect, as it 
-will contain your phpvms settings. For any basic configurations, to avoid needing to change any files 
-in the `/config` directory, the values are first read from the `env.php` file.
+After install, an `env.php` file is generated. This file is important to guard and protect, as it will contain your phpvms settings. For any basic configurations, to avoid needing to change any files in the `/config` directory, the values are first read from the `env.php` file.
 
 Any additions to this file will be noted in the `CHANGELOG` file.
 
@@ -39,6 +37,8 @@ You need the path to the `artisan` file that's in the root of the phpVMS install
 - [Adding a cronjob in cPanel](https://help.fasthosts.co.uk/app/answers/detail/a_id/2198/~/setting-up-cron-jobs-in-cpanel)
 - [Adding a cronjob on Linux](https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/)
 
+***
+
 ## Email
 
 I recommend using a 3rd party service for sending email. They usually offer SMTP support, and great logging and analytics. Especially on a shared host, where email is locked down, and a "naughty neighbor" can quickly get the server/IP you're emailing from blacklisted.
@@ -62,6 +62,8 @@ MAIL_ENCRYPTION=tls
 MAIL_USERNAME=
 MAIL_PASSWORD=
 ```
+
+***
 
 ## Queue
 
