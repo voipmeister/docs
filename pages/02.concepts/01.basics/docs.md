@@ -1,5 +1,8 @@
 ---
 title: Basics
+taxonomy:
+    category:
+        - docs
 ---
 
 phpVMS 7 has a few fundamental differences from the old version, on how schedules and flights are handled.
