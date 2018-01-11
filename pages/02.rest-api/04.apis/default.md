@@ -11,7 +11,7 @@ menu: 'API List'
 
 Returns the user's information, including bids, etc. Example response:
 
-###### Sample Response:
+##### Sample Response:
 
 ```json
 {
