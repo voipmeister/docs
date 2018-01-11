@@ -1,6 +1,6 @@
 ---
-title: APIs
-menu: 'APIs Available'
+title: 'API List'
+menu: 'API List'
 ---
 
 [TOC]
