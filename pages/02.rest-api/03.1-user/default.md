@@ -3,6 +3,8 @@ title: User
 menu: 'User - /user'
 ---
 
+[TOC]
+
 ### GET /api/user
 
 Returns the user's information, including bids, etc. Example response:
