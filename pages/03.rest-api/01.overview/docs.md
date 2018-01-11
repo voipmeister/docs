@@ -1,5 +1,8 @@
 ---
 title: Overview
+taxonomy:
+    category:
+        - docs
 ---
 
 [TOC]
