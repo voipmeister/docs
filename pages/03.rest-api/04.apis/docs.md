@@ -1,5 +1,8 @@
 ---
 title: 'API List'
+taxonomy:
+    category:
+        - docs
 menu: 'API List'
 ---
 
