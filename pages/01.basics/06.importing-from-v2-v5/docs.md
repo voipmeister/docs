@@ -5,13 +5,15 @@ taxonomy:
         - docs
 ---
 
+[TOC]
+
 The importer tool can only be run on the command line, via a PHP artisan command. Before running the importer, you should install phpVMS using the installer. 
 
 ```sh
 php artisan phpvms:importer  {db_host} {db_name} {db_user} {db_pass?}
 ```
 
-## notes and caveats
+## Notes and caveats
 
 Due to some changes with how some of the fundamentals have changed within the system, be aware of the following:
 
@@ -20,7 +22,7 @@ Due to some changes with how some of the fundamentals have changed within the sy
 * IDs will differ (numeric, or PIREP IDs will be converted to the new alphanumeric format)
 * financial data is not yet imported, since this part of phpVMS hasn't been rewritten yet
 
-### Specific things that need to be done
+### Post Import Notes
 
 * Aircraft that are imported are all placed in a generic subfleet. You will need to go and either add additional subfleets, or just rename this subfleet to whatever you want
 * All flights will be assigned to this subfleet. Unfortunately, you will need to re-assign the flights to be with the proper subfleet
