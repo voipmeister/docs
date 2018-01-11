@@ -1,5 +1,8 @@
 ---
 title: Finances
+taxonomy:
+    category:
+        - docs
 ---
 
 ## Fares and Fare classes
