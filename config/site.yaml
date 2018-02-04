@@ -1,5 +1,7 @@
 title: 'phpVMS Documentation'
 default_lang: en
+author:
+  name: 'Nabeel S.'
 taxonomies:
   - category
   - tag

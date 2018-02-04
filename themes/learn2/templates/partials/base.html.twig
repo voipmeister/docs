@@ -28,11 +28,13 @@
         {{ assets.css() }}
     {% endblock %}
 
+    <!--
+    {# {% do assets.addJs('theme://js/clipboard.min.js') %} #}
+    -->
     {% block javascripts %}
         {% do assets.addJs('jquery',101) %}
         {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
         {% do assets.addJs('theme://js/featherlight.min.js') %}
-        {% do assets.addJs('theme://js/clipboard.min.js') %}
         {% do assets.addJs('theme://js/jquery.scrollbar.min.js') %}
         {% do assets.addJs('theme://js/learn.js') %}
         {{ assets.js() }}

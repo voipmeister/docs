@@ -1,4 +1,4 @@
-enabled: true
+enabled: false
 text_var: 'Custom Text added by the **Git Sync** plugin (disable plugin to remove)'
 folders:
   - pages
@@ -9,8 +9,10 @@ remote:
   branch: master
 git:
   author: gituser
-  name: GitSync
-  email: git-sync@trilby.media
+  name: nabeelio
+  email: nshahzad@gmail.com
   bin: git
-logging: false
-password: gitsync-def50200f79d8ee8b9528a6e28538d326be463320dcea9cc693146644b872ad4a949edfbafe6cea3ff7924c121cc436a0a07b665aac9f795762997065dc7d1995b87a9254bfbc8cd74908a2af74bef242f038f3e
+logging: true
+repository: 'https://github.com/phpvms/docs.git'
+user: nabeelio
+password: gitsync-def50200121680550775781036be5f0c0b935b40adbbb82dd8eb8d0b14e4d5be3fe9b301c2c11484855908b9bdaf16980b8d8f44f20f0c5af39c6f405905c316d21c0e8da39c5d1072acc58b2c1fb4ed833951190b4a666562d9eb45386ad1b63a14425a3ae00bdb6796b2ae2095cd9ff8f490ab0ea8ef2e7f2b7a61

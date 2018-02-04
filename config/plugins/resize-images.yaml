@@ -1,0 +1,10 @@
+enabled: true
+adapter: gd
+remove_original: false
+sizes:
+  -
+    width: 640
+    quality: 92
+  -
+    width: 1000
+    quality: 90

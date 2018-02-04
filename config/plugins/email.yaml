@@ -1,0 +1,15 @@
+enabled: true
+from: no-reply@phpvms.net
+to: gm@nabs.io
+mailer:
+  engine: sendmail
+  smtp:
+    server: smtp.sparkpostmail.com
+    port: 587
+    encryption: tls
+    user: SMTP_Injection
+    password: cfabbb10eea439ab1036655b8a41207bbb2a71f7
+  sendmail:
+    bin: '/usr/sbin/sendmail -bs'
+content_type: text/html
+debug: true
