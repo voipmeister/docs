@@ -8,21 +8,24 @@ visible: true
 
 [TOC]
 
-The procedure for ACARS applications has changed in this version of phpVMS. The reason for the changes brings several new features:
+The procedure for ACARS applications has changed in this version of phpVMS, bringing several new features:
 
-* All ACARS data is now tied to a PIREP
-* Any updates provided by an ACARS application are all saved as history, viewable with a PIREP
-* ACARS data can be retrieved
+- All ACARS data is now tied to a PIREP
+- Any updates provided by an ACARS application are all saved as history, viewable with a PIREP
+- ACARS data can be retrieved
 
 All ACARS API calls are done with the user's API key ([see the REST Interface page](https://github.com/nabeelio/phpvms/wiki/REST-Interface)) The procedure for ACARS roughly is:
 
-1. `POST` the `/api/pireps/prefile` with some of the PIREP planned information. It will return a `pirep_id`
-1. `POST` ACARS data updates to `/api/pireps/{PIREP_ID}/acars/positions`.
-1. When the PIREP is ready to be filed, POST to `/api/pireps/{PIREP_ID}/file`, passing in any of the PIREP information to be updated
+1. `POST` the `/api/pireps/prefile` with some of the PIREP planned information. It will return an `id` for the PIREP
+2. `POST` ACARS data updates to `/api/pireps/{PIREP_ID}/acars/positions`
+3. `POST` ACARS event updates to `/api/pireps/{PIREP_ID}/acars/events` (optional)
+4. File the PIREP, a POST to `/api/pireps/{PIREP_ID}/file`, passing in any of the PIREP information to be updated and the final information.
 
 The route is displayed, with an example of the body JSON below it. The code for the API code, for reference, is all located in `\App\Http\Controllers\Api\PirepController`
 
-***
+!!! All units passed in must be in imperial units
+
+------
 
 ## Virtual Airline Settings
 
@@ -32,30 +35,33 @@ To get the settings for a VA, like the units they use for distance, etc.
 GET /api/settings
 ```
 
-***
+------
 
 ## Prefile
 
 Before you can file a PIREP or add any ACARS/route data, a prefile must be completed so you can get a PIREP ID to attach the information to. The user the PIREP is for is automatically determined through the API key. Optional fields are marked as such.
 
 - Required fields
-	- `airline_id`
-	- `aircraft_id`
-	- `flight_number`
-	- `level`
-	- `dpt_airport_id`
-	- `arr_airport_id`
-	- `planned_distance`
-	- `source_name`
+  - `airline_id`
+  - `aircraft_id`
+  - `flight_number`
+  - `dpt_airport_id`
+  - `arr_airport_id`
+  - `source_name`
 - `flight_type`:
-	- 0 for Passenger
-	- 1 for Cargo
-	- 2 for Charter
+  - `0` for Passenger
+  - `1` for Cargo
+  - `2` for Charter
+- `planned_flight_time` must be in **minutes**
+  - While this field isn't required, it's advantageous to add it. It can enable stats to be run on actual vs planned flight times, and progress bars, etc.
+- A `fields` object can be passed which is an arbitrary key-value dictionary. Subsequent updates to the fields are merged, with the same keys being overwritten.
 
 ```http
 POST /api/pireps/prefile
 ```
+
 Sample Request:
+
 ```json
 {
    "airline_id": 1,
@@ -71,27 +77,35 @@ Sample Request:
    "planned_flight_time": 239,
    "route": "ILEXY1 JESSO LFK AEX MEI ATL FIGEY Q64 TYI ORF J121 SIE CAMRN4",
    "source_name": "ACARS",
-   "flight_type": 0
+   "flight_type": 0,
+   "fields" {
+   	  "transponder": "4567",
+      "taxi_time": "0h5m"
+   }
 }
 ```
 
-***
+------
 
 ## PIREP Update
 
 If you want to update any of the fields for a PIREP, you can use this call.
 
+- `flight_time` and `planned_flight_time` must be in **minutes**
+
 ```http
 POST /api/pireps/{ID}/update
 ```
+
 Sample Request:
+
 ```json
 {
    "planned_flight_time": 239
 }
 ```
 
-***
+------
 
 ## File Route
 
@@ -104,7 +118,9 @@ After a PIREP has been prefiled, you can also set the route for the PIREP. These
 ```http
 POST /api/pireps/{PIREP ID}/route
 ```
+
 Sample Request:
+
 ```json
 {
 	"route": [
@@ -125,8 +141,7 @@ To erase the route, a DELETE call can be made. This can be used there's an updat
 DELETE /api/pireps/{PIREP ID}/route
 ```
 
-***
-
+------
 
 ## ACARS Position Updates
 
@@ -138,7 +153,9 @@ ACARS position updates are provided as a list of objects. You can provide one, o
 ```http
 POST /api/pireps/{PIREP ID}/acars/position
 ```
+
 Sample Request:
+
 ```json
 {
 	"positions": [
@@ -157,27 +174,30 @@ Sample Request:
 	]
 }
 ```
+
 You can also retrieve all of the position updates, in case you want to reconcile. Each waypoint is assigned an ID.
 
 ```http
 GET /api/pireps/{PIREP ID}/acars/position
 ```
 
-***
+------
 
 ## ACARS Event Updates
 
 A log is generally an action message, like "Flaps lowered 0 to 10" or "VNAV activated", etc. Log updates are provided as a list of objects. You can provide one, or many as a batch update. While these log/event messages can be included with a position update, when sent as an event, they're saved as a special type in the `acars` table, and are displayed separate from the main ACARS map, as a separate table. These can also be supplied special icons on the ACARS map.
 
 - Required Fields:
-	- `event`
+  - `event`
 
 The `lat`, `lon`, and `created_at` are optional.
 
 ```http
 POST /api/pireps/{PIREP ID}/acars/events
 ```
+
 Sample Request:
+
 ```json
 {
 	"events": [
@@ -191,39 +211,50 @@ Sample Request:
 }
 ```
 
-***
+------
 
 ## File PIREP
 
 This is the final step for a PIREP. All fields, except for the `flight_time` are optional. If other fields are supplied, they'll be updated in the PIREP. Optional fields are marked as such.
 
 - Required fields:
-	- `flight_time` - in minutes
-	- `fuel_used` - in the units specific by the `/api/settings` call
-
+  - `distance` - in **miles**
+  - `flight_time` - in **minutes**
+  - `fuel_used` - in **lbs**
+- A `fields` object can be passed which is an arbitrary key-value dictionary
 
 ```http
 POST /api/pireps/{PIREP ID}/file
 ```
+
 Sample Request:
+
 ```json
 {
-   "flight_time": 202,
-   "fuel_used": 12000,
-   "distance": 1639,
-   "landing_rate": -167,
-   "level": 330,
+   	"flight_time": 202,
+   	"fuel_used": 12000,
+   	"distance": 1639,
+   	"landing_rate": -167,
+   	"level": 330,
+   	"fields" {
+    	"transponder": "4567",
+    	"taxi_time": "0h5m"
+	}
 }
 ```
+
+------
 
 ## PIREP Comments
 
 This adds a comment to the PIREP, visible by an admin. You don't need to have filed the PIREP to add a comment.
 
 ```http
-POST /api/pireps/{PIREP ID}/commentes
+POST /api/pireps/{PIREP ID}/comments
 ```
+
 Sample Request:
+
 ```json
 {
    "comment": "COMMENT TO ADD"
@@ -233,16 +264,7 @@ Sample Request:
 To retrieve the comments, use the `GET` call:
 
 ```http
-GET /api/pireps/{PIREP ID}/commentes
+GET /api/pireps/{PIREP ID}/comments
 ```
 
-
-***
-
-## Cancelling a PIREP
-
-In case a PIREP needs to be cancelled, this route can be called. Note, it will no-longer accept any ACARS updates
-
-```http
-POST /api/pireps/{PIREP ID}/cancel
-```
+------

@@ -14,15 +14,18 @@ The services I recommend and use:
 
 
 ## Configuration
-To configure email, in your `env.php` file, setup the following:
+To configure email, in your `config.php` file, setup the following:
 
-```
-MAIL_DRIVER=smtp
-MAIL_FROM_ADDRESS=[CHANGE]
-MAIL_FROM_NAME="[CHANGE]"
-MAIL_HOST=[ADDRESS]
-MAIL_PORT=[PORT]
-MAIL_ENCRYPTION=tls
-MAIL_USERNAME=
-MAIL_PASSWORD=
+```php
+'mail' => [
+    'driver' => 'smtp',
+    'host' => '',
+    'port' => 587,
+    'from' => [
+        'name' => '',
+        'address' => '',
+    ],
+    'username' => '',
+    'password' => '',
+],
 ```

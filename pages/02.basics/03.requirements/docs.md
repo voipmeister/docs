@@ -7,7 +7,9 @@ taxonomy:
 
 ## Server Requirements
 
-- PHP 7.0+, extensions:
+One of the first steps in the installer is to check your server for the proper requirements.
+
+- PHP 7.1 or up, extensions required:
   - cURL
   - JSON
   - mbstring
@@ -18,9 +20,12 @@ taxonomy:
   - MySQL 5.5+ (or MySQL variant, including MariaDB and Percona)
   - sqlite (if you want a test environment)
 
+!!!! Why PHP 7.1 and above? The original phpVMS was written when PHP 5 was not as widespread, and it's turning 10 this year. PHP 7.0 was recently deprecated, and I want to write software that will last for the forseeable future
+
 ##### Optional
 
-- Redis (for job queuing, various caching and optimizations)
+- [php-apc](http://php.net/manual/en/book.apc.php)
+- [Redis](https://redis.io) (for job queuing, various caching and optimizations)
 
 ### VPS/Dedicated Hosts
 
