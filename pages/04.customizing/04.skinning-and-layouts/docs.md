@@ -1,5 +1,6 @@
 ---
 title: 'Skinning and Layouts'
+visible: false
 ---
 
 [TOC]
