@@ -54,7 +54,8 @@ Before you can file a PIREP or add any ACARS/route data, a prefile must be compl
   - `2` for Charter
 - `planned_flight_time` must be in **minutes**
   - While this field isn't required, it's advantageous to add it. It can enable stats to be run on actual vs planned flight times, and progress bars, etc.
-- A `fields` object can be passed which is an arbitrary key-value dictionary. Subsequent updates to the fields are merged, with the same keys being overwritten.
+- (Optional) A `fields` object can be passed which is an arbitrary key-value dictionary. Subsequent updates to the fields are merged, with the same keys being overwritten.
+- (Optional) A `fares` object is a list of objects, with the fare ID, and the count of passengers or proper unit for what's in that fare. It can be updated in the update/file routes, however, you must pass *all* of the fares, since it'll be overwritten. The fares can be found from the subfleet of the aircraft
 
 ```http
 POST /api/pireps/prefile
@@ -78,10 +79,16 @@ Sample Request:
    "route": "ILEXY1 JESSO LFK AEX MEI ATL FIGEY Q64 TYI ORF J121 SIE CAMRN4",
    "source_name": "ACARS",
    "flight_type": 0,
-   "fields" {
+   "fields": {
    	  "transponder": "4567",
       "taxi_time": "0h5m"
-   }
+   },
+   "fares": [
+      [
+		"id": "FARE ID",
+    	"count": "Number in this fare",
+	  ],
+   ]
 }
 ```
 
