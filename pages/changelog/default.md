@@ -1,9 +1,3 @@
----
-taxonomy:
-    category:
-        - docs
----
-
 ## Alpha 2 (2018-02-23, v7.0.0-alpha2)
 
 !! Please do a full reinstall, with recreating the database
