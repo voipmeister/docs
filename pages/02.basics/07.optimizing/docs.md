@@ -1,5 +1,8 @@
 ---
 title: Optimizing
+taxonomy:
+    category:
+        - docs
 ---
 
 [TOC]

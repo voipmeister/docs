@@ -1,5 +1,8 @@
 ---
 title: 'Rate Limiting'
+taxonomy:
+    category:
+        - docs
 ---
 
 [TOC]

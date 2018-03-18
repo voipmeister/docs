@@ -1,5 +1,8 @@
 ---
 title: 'Development Environment'
+taxonomy:
+    category:
+        - docs
 ---
 
 [TOC]

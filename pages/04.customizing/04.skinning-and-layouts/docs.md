@@ -1,5 +1,8 @@
 ---
 title: 'Skinning and Layouts'
+taxonomy:
+    category:
+        - docs
 visible: false
 ---
 

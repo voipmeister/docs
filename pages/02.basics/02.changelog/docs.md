@@ -1,4 +1,7 @@
 ---
+taxonomy:
+    category:
+        - docs
 process:
     markdown: true
     twig: false

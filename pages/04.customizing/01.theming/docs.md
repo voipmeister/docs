@@ -1,5 +1,8 @@
 ---
 title: Theming
+taxonomy:
+    category:
+        - docs
 ---
 
 The custom theme system is using [laravel-theme](https://github.com/igaster/laravel-theme), which allows for great flexibility for creating themes, and extending existing ones, or only modifying the templates that you want to change.

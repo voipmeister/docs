@@ -1,5 +1,8 @@
 ---
 title: Widgets
+taxonomy:
+    category:
+        - docs
 ---
 
 [TOC]
