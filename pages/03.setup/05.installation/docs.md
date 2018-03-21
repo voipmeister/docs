@@ -21,6 +21,18 @@ The tar file from the downloads site contains all of the dependencies. The versi
 
 TODO
 
+### Git/Cloned Repository
+
+After you clone from Github, or download the ZIP that's offered by Github of the source, you have to run `composer install` in order for the dependencies and vendor data to be downloaded:
+
+```bash
+git clone https://github.com/nabeelio/phpvms.git
+cd phpvms
+composer install
+```
+
+After running `composer install`, you can continue the directions below.
+
 ***
 
 ## Running the Installer

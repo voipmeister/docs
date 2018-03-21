@@ -6,7 +6,7 @@ taxonomy:
         - docs
 ---
 
-You can add custom fields to your flight schedules. In the admin panel, go to `Flights` and then `Fields on the top right. The fields will show up in `Edit Flight`, as a "template" for fields that can/should be filled out.
+You can add custom fields to your flight schedules. In the admin panel, go to `Flights` and then `Fields` on the top right. The fields will show up in `Edit Flight`, as a "template" for fields that can/should be filled out.
 
 To use these values in your template, you can call the `field()` method on the `Flight` model (e.g, in the `flights/table.blade.php` file):
 
