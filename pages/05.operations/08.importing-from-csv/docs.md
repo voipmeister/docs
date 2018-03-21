@@ -1,9 +1,8 @@
 ---
-title: Operations
+title: 'Importing from CSV'
 taxonomy:
     category:
         - docs
 ---
 
-# Operations
-
+Describe CSV format
