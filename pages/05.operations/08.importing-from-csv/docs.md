@@ -20,6 +20,8 @@ General notes about the CSV files:
 - To get a CSV file, you can export it from the category that you want
 - The header is required
 
+!!! There are sample files in the `tests/data` folder
+
 #### Command line
 
 Larger imports can be run from the command-line, using:
@@ -28,7 +30,18 @@ Larger imports can be run from the command-line, using:
 php artisan phpvms:csv-import {file path}
 ```
 
+------
 
+## File Templates
+
+| Name        | Download    |
+| ----------- | ----------- |
+| Aircraft    | Active      |
+| Airports           | Stored      |
+| Expenses           | Retired     |
+| Fares           | Scrapped    |
+| Flights           | Written Off |
+| Subfleets  |  |
 
 ------
 
