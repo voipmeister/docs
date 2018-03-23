@@ -34,14 +34,7 @@ php artisan phpvms:csv-import {file path}
 
 ## File Templates
 
-| Name        | Download    |
-| ----------- | ----------- |
-| Aircraft    | Active      |
-| Airports           | Stored      |
-| Expenses           | Retired     |
-| Fares           | Scrapped    |
-| Flights           | Written Off |
-| Subfleets  |  |
+You can download the [template zip files from the downloads site](https://forum.phpvms.net/files/file/15-import-csv-templates/)
 
 ------
 
