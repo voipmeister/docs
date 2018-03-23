@@ -130,7 +130,7 @@ Since expenses can be applied to certain objects, you can also import them. For 
 | dpt_airport   |                                           | Required, ICAO                                               |
 | arr_airport   |                                           | Required, ICAO                                               |
 | alt_airport   |                                           | Optional, ICAO                                               |
-| days          | `0123456`                                 | 0 (Sunday) through 6 (Saturday)                              |
+| days          | `1234567`                                 | 1 (Monday) through 7 (Sunday)                              |
 | dpt_time      | `0600 CST`                                | Departure time                                               |
 | arr_time      |                                           | Arrival time                                                 |
 | level         |                                           | Flight level                                                 |
