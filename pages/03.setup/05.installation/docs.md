@@ -10,18 +10,20 @@ taxonomy:
 
 ## Downloading
 
-### Download tar file
+There are a few ways you can obtain phpVMS and its dependencies. The full package method already includes the `vendor` directory and you don't need to do anything but upload it.
+
+#### Download Full Package
 
 The tar file from the downloads site contains all of the dependencies. The versions available are:
 
 - [Official releases and pre-releases](https://github.com/nabeelio/phpvms/releases) - The latest released versions
 - [master, development branch](http://phpvms.net/downloads/phpvms-v7.0.0-master.tar.gz) - The latest commit, unstable
 
-### Composer
+#### Composer
 
-TODO
+Coming Soon
 
-### Git/Cloned Repository
+#### Git Cloned or Github Download of Repository
 
 After you clone from Github, or download the ZIP that's offered by Github of the source, you have to run `composer install` in order for the dependencies and vendor data to be downloaded:
 
@@ -37,7 +39,9 @@ After running `composer install`, you can continue the directions below.
 
 ## Running the Installer
 
-1. Create your database and credentials. Refer to your hosts documentation for specifics - the database name, username and password here are just examples, replace them with your own. This example is for MySQL:
+##### Create your database and credentials. 
+
+Refer to your hosts documentation for specifics - the database name, username and password here are just examples, replace them with your own. This example is for MySQL:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS `phpvms` CHARACTER SET UTF8 COLLATE utf8_unicode_ci;
@@ -46,17 +50,19 @@ GRANT ALL PRIVILEGES ON phpvms.* TO 'phpvms'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-2. Go to your site
+##### Running the installer
+
+!!! There isn't a `setup` folder in the tar file. It's done as a Laravel route, which serves to see that your webserver/htaccess files are working correctly
 
 Once you go to your site, you'll see a page like this, click to proceed to the installer.
 
 ![](step1.png?sizes=50vw)
 
-3. After clicking next, you'll see the requirements check page. The installer will only let you proceeed if all of the requirements are met.
+After clicking next, you'll see the requirements check page. The installer will only let you proceeed if all of the requirements are met.
 
 ![](step2.png?sizes=50vw)
 
-4. The next page brings you to the database setup page. 
+The next page brings you to the database setup page. 
 
 - Enter the name of your site and the URL
 - Enter your database credentials. 
@@ -68,11 +74,11 @@ After clicking "Setup Database", you'll see the installation screen. Hit next to
 
 ![](step4.png?sizes=50vw)
 
-5. You'll be brought to the initial setup screen. Create your first airline here, along with your user and password. This will be automatically made as an admin user.
+You'll be brought to the initial setup screen. Create your first airline here, along with your user and password. This will be automatically made as an admin user.
 
 ![](step5.png?sizes=50vw)
 
-6. After setting that up, you'll see the completion screen, where you can click next and proceed to login. You'll see your dashboard after logging in, and the installation is complete!
+After setting that up, you'll see the completion screen, where you can click next and proceed to login. You'll see your dashboard after logging in, and the installation is complete!
 
 ![](step7.png?sizes=50vw)
 
