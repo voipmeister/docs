@@ -82,7 +82,10 @@ After setting that up, you'll see the completion screen, where you can click nex
 
 ![](step7.png?sizes=50vw)
 
-## Installation Done!
+### Next Steps
 
-Read [the next section about the configuration file](/basics/installation/configuration/config-files). You can set your mail-server configuration, etc, by adjust the values in the `config.php` file.
+1. Read [about the configuration files](/basics/installation/configuration/config-files).
+2. [Setup the cron task on your server](http://docs.phpvms.net/configuration/cron)
+3. [Configure your mail server](http://docs.phpvms.net/configuration/email)
+4. [Get Recaptcha working](http://docs.phpvms.net/configuration/recaptcha)
 

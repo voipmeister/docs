@@ -6,14 +6,11 @@ taxonomy:
 visible: true
 ---
 
-In order for some phpVMS features to work, a cronjob is required to be setup.
-
-Some of the features that rely on cronjobs include:
+In order for some phpVMS features to work, a cronjob is required to be setup. Some of the features that rely on cronjobs include:
 
 - Finances
+- Mass Emails
 - vaCentral features
-- Mass Emailing
-- Backups
 
 ### Setup
 
