@@ -99,6 +99,8 @@ Sample Request:
 If you want to update any of the fields for a PIREP, you can use this call.
 
 - `flight_time` and `planned_flight_time` must be in **minutes**
+- `block_off_time` should be updated on pushback - in UTC
+- `block_on_time` should be updated on gate/parking arrival - in UTC
 
 ```http
 POST /api/pireps/{ID}/update
@@ -228,6 +230,9 @@ This is the final step for a PIREP. All fields, except for the `flight_time` are
   - `distance` - in **miles**
   - `flight_time` - in **minutes**
   - `fuel_used` - in **lbs**
+- `block_time` isn't required, but is encouraged. Must be in **minutes**
+- `block_off_time` should be updated on pushback - in UTC
+- `block_on_time` should be updated on gate/parking arrival - in UTC
 - A `fields` object can be passed which is an arbitrary key-value dictionary
 
 ```http
