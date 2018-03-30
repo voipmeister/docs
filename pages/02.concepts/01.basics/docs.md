@@ -57,6 +57,7 @@ These subfleets, can be assigned to routes and ranks, making it easy to apply mu
 Schedules have been renamed to "flights". A flight consists of:
 
 - An airline
+- Flight type
 - Flight number
 - Flight Code (optional)
 - Flight Leg (optional)
@@ -65,6 +66,26 @@ Schedules have been renamed to "flights". A flight consists of:
 - Any number of subfleets
 
 Flight numbers do not need to be unique, however, if a duplicate flight number is found, the creation/edit will fail, and a route code or leg must be provided in order for it to work properly.
+
+Flight types follow the IATA SSIM service code. The ones highlighted in bold are the most common.
+
+- A = Additional Cargo/Mail
+- **C = Charter – Passenger only**
+- E = Special VIP Flight (FAA/Government)
+- **F = Scheduled – Cargo and/or Mail**
+- G = Additional Flights – Passenger Normal Service
+- H = Charter – Cargo and/or Mail
+- I = Ambulance Flight
+- **J = Scheduled – Passenger Normal Service**
+- K = Training Flights
+- M = Mail Service
+- O = Charter requiring special handling (e.g. migrants, immigrants)
+- P = Positioning Flights – Non Revenue (ferry/delivery/demo)
+- T = Technical Test
+- W = Military
+- X = Technical Stop
+
+More resources
 
 - [Forum Topic - Connecting Flights](https://forum.phpvms.net/topic/24329-connecting-flights/)
 - [Quora - Multi-leg and multi-segment flights](https://www.quora.com/What-is-the-difference-between-Multi-leg-and-Multi-segment-flights)
