@@ -67,6 +67,8 @@ Schedules have been renamed to "flights". A flight consists of:
 
 Flight numbers do not need to be unique, however, if a duplicate flight number is found, the creation/edit will fail, and a route code or leg must be provided in order for it to work properly.
 
+### Flight Types
+
 Flight types follow the IATA SSIM service code. The ones highlighted in bold are the most common.
 
 - A = Additional Cargo/Mail
