@@ -504,6 +504,8 @@ Query string parameters: `?type=[parameter]`. Default/blank is the DB ID
 
 Return all of the flights, paginated
 
+- `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible values
+
 **Sample Response:**
 
 ```json
@@ -539,6 +541,7 @@ Return all of the flights, paginated
       "dpt_time": "6PM CST",
       "arr_time": "11PM EST",
       "flight_time": 360,
+      "flight_type": "J",
       "notes": "",
       "active": true,
       "subfleet": [
@@ -596,6 +599,8 @@ Return all of the flights, paginated
 
 Return details about a given flight
 
+- `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible values
+
 **Sample Response:**
 
 ```json
@@ -630,6 +635,7 @@ Return details about a given flight
       "dpt_time": "6PM CST",
       "arr_time": "11PM EST",
       "flight_time": 360,
+      "flight_type": "J",
       "notes": "",
       "active": true,
       "subfleet": [
@@ -693,6 +699,8 @@ See `GET /api/flights`
 
 Retrieve the PIREP information
 
+- `status` - See [PIREP Status](/rest-api/types#pirep-status) for possible values
+
 **Sample Response:**
 
 ```json
@@ -723,7 +731,7 @@ Retrieve the PIREP information
     "source_name": null,
     "flight_type": 0,
     "state": 1,
-    "status": 0,
+    "status": "OFB",
     "raw_data": null,
     "created_at": "2018-02-10 23:45:33",
     "updated_at": "2018-02-10 23:45:33",

@@ -48,10 +48,8 @@ Before you can file a PIREP or add any ACARS/route data, a prefile must be compl
   - `dpt_airport_id`
   - `arr_airport_id`
   - `source_name`
-- `flight_type`:
-  - `0` for Passenger
-  - `1` for Cargo
-  - `2` for Charter
+- `flight_type`. See [Flight Types](/rest-api/types#flight-types) for possible values
+- `status` field, optional. See [PIREP Status](/rest-api/types#pirep-status) for possible values. Defaults to "INI". Will change automatically to "OFB" on first ACARS position update, if not changed in a `/update` call.
 - `planned_flight_time` must be in **minutes**
   - While this field isn't required, it's advantageous to add it. It can enable stats to be run on actual vs planned flight times, and progress bars, etc.
 - (Optional) A `fields` object can be passed which is an arbitrary key-value dictionary. Subsequent updates to the fields are merged, with the same keys being overwritten.
@@ -78,6 +76,7 @@ Sample Request:
    "planned_flight_time": 239,
    "route": "ILEXY1 JESSO LFK AEX MEI ATL FIGEY Q64 TYI ORF J121 SIE CAMRN4",
    "source_name": "ACARS",
+   "status": "BST",
    "flight_type": 0,
    "fields": {
    	  "transponder": "4567",
@@ -101,6 +100,7 @@ If you want to update any of the fields for a PIREP, you can use this call.
 - `flight_time` and `planned_flight_time` must be in **minutes**
 - `block_off_time` should be updated on pushback - in UTC
 - `block_on_time` should be updated on gate/parking arrival - in UTC
+- `status` is optional. See [PIREP Status](/rest-api/types#pirep-status) for possible values.
 
 ```http
 POST /api/pireps/{ID}/update
@@ -158,6 +158,8 @@ ACARS position updates are provided as a list of objects. You can provide one, o
 
 - `created_at` is optional, the current time in UTC will be used. If you're providing multiple position updates, however, you should set the `created_at` field, so all the waypoints aren't marked as being reached at the same time.
 - `log` is optional, there is a separate endpoint for sending log messages
+
+!!! If the `status field hasn't been sent, and is "INI" from the prefile, it will change to "OFB" - Departed
 
 ```http
 POST /api/pireps/{PIREP ID}/acars/position
@@ -278,5 +280,3 @@ To retrieve the comments, use the `GET` call:
 ```http
 GET /api/pireps/{PIREP ID}/comments
 ```
-
-------
