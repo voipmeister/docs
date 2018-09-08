@@ -17,9 +17,7 @@ These are derived from the IATA SSIM formats
 |   J   | Passenger - Scheduled               |
 |   F   | Cargo - Scheduled                   |
 |   C   | Charter - Passenger Only            |
-|   A   | Additional Cargo/Mail               |
 |   E   | Special VIP Flight (FAA/Government) |
-|   G   | Passenger - Additional              |
 |   H   | Charter - Cargo/Mail                |
 |   I   | Ambulance Flight                    |
 |   K   | Training Flight                     |
@@ -28,7 +26,6 @@ These are derived from the IATA SSIM formats
 |   P   | Positioning (Ferry/Delivery/Demo)   |
 |   T   | Technical Test                      |
 |   W   | Military                            |
-|   X   | Technical Stop                      |
 
 ---
 
