@@ -1,6 +1,0 @@
-enabled: true
-css_files:
-  -
-    path: custom.css
-    priority: 0
-css_inline: '#top-bar { display: none }'

@@ -1,8 +1,0 @@
-enabled: true
-top_level_version: false
-show_all_pages: false
-home_url: 'http://phpvms.net'
-github:
-  position: 'off'
-  tree: 'https://github.com/phpvms/docs/tree/master'
-  commits: 'https://github.com/phpvms/docs/commits/master'
