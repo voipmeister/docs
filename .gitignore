@@ -4,6 +4,7 @@ composer.lock
 cache/*
 config/
 assets/*
+localhost/
 logs/*
 images/*
 user/data/*
