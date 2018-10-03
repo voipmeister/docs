@@ -1,6 +1,7 @@
 # Grav Specific
 .sass-cache
 composer.lock
+accounts
 cache/*
 config/
 assets/*
@@ -8,6 +9,7 @@ localhost/
 logs/*
 images/*
 user/data/*
+cron.sh
 
 # OS Generated
 .DS_Store*
