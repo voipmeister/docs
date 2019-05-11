@@ -7,9 +7,13 @@ taxonomy:
 
 [TOC]
 
-## Laravel Valet
+# Docker Compose
 
-The easiest way to load locally is to install [Laravel Valet](https://laravel.com/docs/5.5/valet) (if you're running a Mac). Follow the instructions to install; you install it, go to your phpvms directory, and run:
+The easiest way to get a local install working is using [Docker Compose](https://docs.docker.com/compose), which comes with [Docker](https://www.docker.com). 
+
+# Laravel Valet
+
+If you don't want to use docker-compose, easiest way to load locally is to install [Laravel Valet](https://laravel.com/docs/5.5/valet) (if you're running a Mac). Follow the instructions to install; you install it, go to your phpvms directory, and run:
 
 ```bash
 valet link phpvms
