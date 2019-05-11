@@ -9,7 +9,14 @@ taxonomy:
 
 # Docker Compose
 
-The easiest way to get a local install working is using [Docker Compose](https://docs.docker.com/compose), which comes with [Docker](https://www.docker.com). 
+The easiest way to get a local install working is using [Docker Compose](https://docs.docker.com/compose), which comes with [Docker](https://www.docker.com). Check out the latest code:
+
+```bash
+composer install
+docker-compose up
+```
+
+Then visit your site at `http://localhost`
 
 # Laravel Valet
 
