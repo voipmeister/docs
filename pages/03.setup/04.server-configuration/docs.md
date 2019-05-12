@@ -22,32 +22,35 @@ Either on a VPC or your own dedicated host is the best way to run phpVMS. As Lar
 
 ## nginx 
 
-The paths below will need to be changed to what's correct for your server. You also need to have `php-fpm` installed. 
+The paths below will need to be changed to what's correct for your server. You also need to have `php-fpm` installed. See the [configuration file included with the nginx Docker config](https://github.com/nabeelio/phpvms/blob/dev/docker/nginx/default.conf)
 
 ```nginx
 server {
-  listen 80 default_server;
-  listen [::]:80 default_server ipv6only=on;
+    listen 80 default_server;
+    server_name phpvms.test;
 
-  root /var/www/phpvms/public; # Also depends on your server
-  index index.php index.html index.htm;
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
 
-  location / {
-    try_files $uri $uri/ =404;
-  }
+    root /var/www/public;
+    index index.php index.html index.htm;
 
-  location ~ .php$ {
-    fastcgi_pass   unix:/run/php/php7.1-fpm.sock;  # Depends on your server
-    fastcgi_index  index.php;
-    fastcgi_buffers 16 8k;
-    fastcgi_buffer_size 16k;
-    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-    include        /etc/nginx/fastcgi_params;
-  }
+    location / {
+         try_files $uri $uri/ /index.php$is_args$args;
+    }
 
-  location ~ /\.ht {
-    deny all;
-  }
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass app:9000; # THIS DEPENDS ON YOUR SERVER AND MIGHT NEED TO CHANGE
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include /etc/nginx/fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
 }
 ```
 
