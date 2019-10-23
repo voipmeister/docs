@@ -25,7 +25,7 @@ Coming Soon
 
 #### Git Cloned or Github Download of Repository
 
-After you clone from Github, or download the ZIP that's offered by Github of the source, you have to run `composer install` in order for the dependencies and vendor data to be downloaded:
+After you SSH to your server, you can clone from Github, or download the ZIP that's offered by Github of the source, you have to run `composer install` in order for the dependencies and vendor data to be downloaded. 
 
 ```bash
 git clone https://github.com/nabeelio/phpvms.git
