@@ -39,3 +39,8 @@ Log into your cPanel, and look for "MySQL Database Wizard":
 Follow the wizard to generate a new database, user and password for the phpVMS Database
 
 
+---
+
+# Continue the Setup
+
+Follow the instructions outlined here http://docs.phpvms.net/setup/installation#running-the-installer-1
