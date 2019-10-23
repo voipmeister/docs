@@ -43,4 +43,4 @@ Follow the wizard to generate a new database, user and password for the phpVMS D
 
 # Continue the Setup
 
-Follow the instructions outlined here http://docs.phpvms.net/setup/installation#running-the-installer-1
+Continue/follow the instructions here http://docs.phpvms.net/setup/installation#running-the-installer
