@@ -37,7 +37,7 @@ After running `composer install`, you can continue the directions below.
 
 ***
 
-## Running the Installer
+# Database Configuration
 
 ##### Create your database and credentials. 
 
@@ -50,7 +50,9 @@ GRANT ALL PRIVILEGES ON phpvms.* TO 'phpvms'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-##### Running the installer
+***
+
+# Running the Installer
 
 !!! There isn't a `setup` folder in the tar file. It's done as a Laravel route, which serves to see that your webserver/htaccess files are working correctly
 
